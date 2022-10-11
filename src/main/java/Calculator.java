@@ -18,6 +18,10 @@ class Calculator {
     }
 
     int divide(int a , int b){
+
+        if(b == 0){
+            throw new ArithmeticException("/ by zero");
+        }
         return a / b;
     }
 
@@ -39,7 +43,8 @@ class Calculator {
     etc
      */
     int fibonacciNumberFinder(int n){
-        return 0;
+        if ((n==0) || (n==1)) return n;
+        else return fibonacciNumberFinder(n-1) + fibonacciNumberFinder(n-2);
     }
 
 
@@ -51,7 +56,7 @@ class Calculator {
     if int a = 16 then this method returns: 10000
      */
     String intToBinaryNumber(int n){
-        return null;
+        return Integer.toBinaryString(n);
     }
 
     /*
@@ -64,7 +69,8 @@ class Calculator {
      */
     String createUniqueID(String n){
 
-        return null;
+        String random = java.util.UUID.randomUUID().toString();
+        return n + random;
     }
 
 
